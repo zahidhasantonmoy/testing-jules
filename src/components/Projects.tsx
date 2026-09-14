@@ -2,9 +2,9 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
-import ProjectModal from './ProjectModal';
 import { useFilter } from '@/context/FilterContext';
 import { useAudio } from '@/hooks/useAudio';
+import { useRouter } from 'next/navigation';
 
 interface Project {
   id: string;
@@ -23,9 +23,9 @@ interface ProjectsProps {
 
 const Projects = ({ projects }: ProjectsProps) => {
   const [selectedCategory, setSelectedCategory] = React.useState('All');
-  const [selectedProject, setSelectedProject] = React.useState<Project | null>(null);
   const { selectedSkill } = useFilter();
   const { playClick } = useAudio();
+  const router = useRouter();
 
   // Extract unique categories and add 'All'
   const categories = ['All', ...Array.from(new Set(projects.map((project) => project.category)))];
@@ -113,23 +113,13 @@ const Projects = ({ projects }: ProjectsProps) => {
                   githubUrl={project.githubUrl}
                   onClick={() => {
                     playClick();
-                    setSelectedProject(project);
+                    router.push(`/projects/${project.id}`);
                   }}
                 />
               </motion.div>
             );
           })}
         </motion.div>
-
-        <AnimatePresence>
-          {selectedProject && (
-            <ProjectModal
-              project={selectedProject}
-              isOpen={!!selectedProject}
-              onClose={() => setSelectedProject(null)}
-            />
-          )}
-        </AnimatePresence>
       </div>
     </section>
   );

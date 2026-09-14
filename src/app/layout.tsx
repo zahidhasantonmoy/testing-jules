@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import CommandPalette from "@/components/CommandPalette";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -48,11 +50,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://zahidhasantonmoy.vercel.app", // Replace with your actual domain
+    canonical: "https://zahidhasantonmoy.vercel.app",
+    types: {
+      'text/plain': 'https://zahidhasantonmoy.vercel.app/llms.txt',
+    },
   },
 };
-
-import Providers from "./providers";
 
 export default function RootLayout({
   children,
@@ -340,7 +343,10 @@ export default function RootLayout({
             })
           }}
         />
-        <Providers>{children}</Providers>
+        <Providers>
+          <CommandPalette />
+          {children}
+        </Providers>
         <Analytics />
       </body>
     </html>
