@@ -1,0 +1,52 @@
+# Zahid Hasan Tonmoy
+
+> MERN Full Stack Developer, Data Analyst & AI Agent Developer based in Dhaka, Bangladesh.
+
+Zahid Hasan Tonmoy is a computer science student at Daffodil International University (2021–present) who builds full-stack web applications, data science tools, AI agents, and mobile apps. He has delivered 9+ projects spanning web apps, mobile apps, IoT systems, and machine learning models. He is available for freelance, contract, and full-time work internationally.
+
+**Portfolio:** https://zahidhasantonmoy.vercel.app
+**Structured data (JSON):** https://zahidhasantonmoy.vercel.app/api/about
+**Last updated:** 2025-08-25
+
+## Identity
+
+- [Portfolio](https://zahidhasantonmoy.vercel.app): Official portfolio site
+- [GitHub](https://github.com/zahidhasantonmoy): Source code and projects
+- [LinkedIn](https://www.linkedin.com/in/zahidhasantonmoy/): Professional profile
+- [Contact](https://zahidhasantonmoy.vercel.app/#contact): Hire or get in touch
+
+## Projects
+
+- [Flexpath](https://github.com/zahidhasantonmoy/Flexpath): Gig economy mobile app for Bangladesh — Flutter, Supabase, PostgreSQL; NID verification, real-time chat, role-based dashboards
+- [Gold Price Predictor](https://gold-price-predictor-2f1h.onrender.com/): ML regression app predicting daily gold prices with R² ≈ 0.9999 — Python, Scikit-learn, Flask
+- [Curious Cart BD](https://curiouscart.vercel.app/): Full-stack e-commerce platform — Next.js, React, TypeScript, Tailwind CSS, REST API
+- [Jerseyvault](https://jerseyvault.vercel.app/): Full e-commerce platform with order tracking, wishlist, reviews — React, Supabase, PostgreSQL
+- [Vortex Shield](https://protocolzero.vercel.app/): File encryption suite with AES-GCM and Argon2id — Python, CustomTkinter, React, TypeScript
+- [LocalDrop Pro](https://localdrop-one.vercel.app/): P2P browser-to-browser file transfer via WebRTC with AES-GCM encryption — React, PeerJS, PWA
+- [Smart Drainage System](https://github.com/zahidhasantonmoy/smartdrainagesystem): IoT flood prevention system — ESP32-S3, MicroPython, Firebase, Android
+- [Halarnati](https://halarnati.free.nf/): File and text sharing platform for Bangladeshi users — PHP, MySQL
+- [OffenseOrbit](https://github.com/zahidhasantonmoy/OffenseOrbit): Crime management platform for citizens and law enforcement — PHP, MySQL, Bootstrap
+
+## Skills
+
+- [MERN Stack](https://zahidhasantonmoy.vercel.app/#skills): MongoDB, Express.js, React, Node.js, TypeScript, REST API, JWT Auth, Redux, Mongoose
+- [Web Development](https://zahidhasantonmoy.vercel.app/#skills): Next.js, Tailwind CSS, HTML, CSS, JavaScript, PHP, SQL, WordPress
+- [Data Science & AI](https://zahidhasantonmoy.vercel.app/#skills): Python, NumPy, Pandas, TensorFlow, Keras, Scikit-learn, PyTorch, Matplotlib
+- [Mobile & Backend](https://zahidhasantonmoy.vercel.app/#skills): Flutter, Firebase, Supabase, Docker
+- [Digital Marketing](https://zahidhasantonmoy.vercel.app/#skills): SEO, SEM, Social Media Marketing, Google Analytics
+
+## Credentials
+
+- [Software Development Competition Winner 2024](https://zahidhasantonmoy.vercel.app/#achievements): 1st place, Dhaka, Bangladesh
+- [Project Showcase 2nd Place 2024](https://zahidhasantonmoy.vercel.app/#achievements): BUBT CSE Department
+- [Intro to Machine Learning](https://zahidhasantonmoy.vercel.app/#achievements): Kaggle certificate, 2025
+- [Digital Marketing (TAFE)](https://zahidhasantonmoy.vercel.app/#achievements): BUBT–TAFE, Top Performer, 2025
+- [Cyber Hygiene Training](https://zahidhasantonmoy.vercel.app/#achievements): Google.org & Asia Foundation, 2025
+
+
+## Links
+
+- [Resume (PDF)](https://zahidhasantonmoy.vercel.app/files/Resume/Zahid_Hasan_Resume.pdf): Download full CV
+- [Projects section](https://zahidhasantonmoy.vercel.app/#projects): All 9 live projects
+- [About section](https://zahidhasantonmoy.vercel.app/#about): Bio and background
+- [Structured API](https://zahidhasantonmoy.vercel.app/api/about): Machine-readable JSON portfolio data
