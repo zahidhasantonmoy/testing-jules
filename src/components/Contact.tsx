@@ -14,7 +14,7 @@ const Contact = () => {
 
   const { playSwoosh, playSuccess } = useAudio();
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (form.current) {
@@ -23,25 +23,54 @@ const Contact = () => {
       setShowPlane(true);
       playSwoosh();
 
-      emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
-      )
-        .then((result) => {
-          console.log(result.text);
-          setTimeout(() => {
-            setIsSubmitting(false);
-            setIsSuccess(true);
-            playSuccess();
-            setShowPlane(false);
-          }, 2000); // Wait for animation roughly
-        }, (error) => {
-          console.log(error.text);
+      const formData = new FormData(form.current);
+      const data = {
+        user_name: formData.get('user_name'),
+        user_email: formData.get('user_email'),
+        message: formData.get('message')
+      };
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          // Rate limit check passed, now actually send the email
+          emailjs.sendForm(
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+            form.current,
+            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+          ).then((result) => {
+             console.log(result.text);
+             setTimeout(() => {
+               setIsSubmitting(false);
+               setIsSuccess(true);
+               playSuccess();
+               setShowPlane(false);
+             }, 2000);
+          }, (error) => {
+             console.log(error.text);
+             setIsSubmitting(false);
+             setShowPlane(false);
+          });
+        } else {
+          // Rate limited or other backend error
+          console.error("Backend error or rate limit hit");
+          alert("Could not send message. Please try again later or wait a while.");
           setIsSubmitting(false);
           setShowPlane(false);
-        });
+        }
+      } catch (error) {
+        console.error(error);
+        setIsSubmitting(false);
+        setShowPlane(false);
+      }
     }
   };
 
