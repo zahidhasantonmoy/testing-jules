@@ -43,7 +43,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     <main className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-24 pb-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
-          href="/#projects"
+          href="/projects"
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8"
         >
           <FaArrowLeft className="mr-2" /> Back to Projects

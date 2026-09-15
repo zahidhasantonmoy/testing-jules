@@ -9,9 +9,12 @@ Zahid Hasan Tonmoy is a MERN Full Stack Developer, Data Analyst, AI Agent Develo
 
 ## Key Projects
 - **Flexpath**: A mobile-first gig economy platform for Bangladesh using Flutter and Supabase.
-- **Gold Price Predictor**: A machine learning application predicting daily gold closing prices.
+- **Gold Price Predictor**: A machine learning application predicting daily gold closing prices with R² ≈ 0.9999.
 - **Curious Cart BD**: A full-stack e-commerce platform built with Next.js, React, and TypeScript.
+- **Jerseyvault**: A full-featured e-commerce platform built with React.js and powered by Supabase.
+- **Vortex Shield**: A cybersecurity file encryption suite with AES-GCM and Argon2id.
 - **LocalDrop Pro**: A peer-to-peer file sharing and real-time chat web application via WebRTC.
+- **Smart Drainage System**: An IoT project combining hardware (ESP32-S3) and an Android app for real-time drainage monitoring.
 
 ## Contact
 Email: zahidhasantonmoy360@gmail.com
@@ -22,3 +25,5 @@ Portfolio: https://zahidhasantonmoy.vercel.app
 - **Portfolio & Projects**: https://zahidhasantonmoy.vercel.app
 - **Services**: https://zahidhasantonmoy.vercel.app/services
 - **Blog**: https://zahidhasantonmoy.vercel.app/blog
+- **GitHub**: https://github.com/zahidhasantonmoy
+- **LinkedIn**: https://www.linkedin.com/in/zahidhasantonmoy/

@@ -1,6 +1,5 @@
 "use client";
 import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaCheck } from 'react-icons/fa';
 
@@ -40,25 +39,12 @@ const Contact = () => {
         });
 
         if (response.ok) {
-          // Rate limit check passed, now actually send the email
-          emailjs.sendForm(
-            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-            form.current,
-            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
-          ).then((result) => {
-             console.log(result.text);
-             setTimeout(() => {
-               setIsSubmitting(false);
-               setIsSuccess(true);
-               playSuccess();
-               setShowPlane(false);
-             }, 2000);
-          }, (error) => {
-             console.log(error.text);
-             setIsSubmitting(false);
-             setShowPlane(false);
-          });
+          setTimeout(() => {
+            setIsSubmitting(false);
+            setIsSuccess(true);
+            playSuccess();
+            setShowPlane(false);
+          }, 2000);
         } else {
           // Rate limited or other backend error
           console.error("Backend error or rate limit hit");
