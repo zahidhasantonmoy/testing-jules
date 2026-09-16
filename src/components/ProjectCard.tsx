@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 
 interface ProjectCardProps {
@@ -56,7 +56,10 @@ const ProjectCard = ({ title, description, images, technologies, liveUrl, github
     scale.set(1);
   };
 
+  const shouldReduceMotion = useReducedMotion();
+
   const handleMouseEnter = () => {
+    if (shouldReduceMotion) return;
     scale.set(1.02);
   }
 
@@ -76,35 +79,37 @@ const ProjectCard = ({ title, description, images, technologies, liveUrl, github
   return (
     <motion.div
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseMove={shouldReduceMotion ? undefined : handleMouseMove}
+      onMouseLeave={shouldReduceMotion ? undefined : handleMouseLeave}
       onMouseEnter={handleMouseEnter}
       style={{
-        rotateX,
-        rotateY,
+        rotateX: shouldReduceMotion ? 0 : rotateX,
+        rotateY: shouldReduceMotion ? 0 : rotateY,
         scale,
         transformStyle: "preserve-3d",
       }}
-      className="relative bg-white dark:bg-gray-800 rounded-xl rounded-tr-[30px] overflow-hidden shadow-xl cursor-pointer group perspective-1000 transform-gpu"
+      className="relative bg-white dark:bg-gray-800 rounded-xl rounded-tr-[30px] overflow-hidden shadow-xl cursor-pointer group perspective-1000 transform-gpu transition-shadow duration-300 hover:shadow-2xl hover:ring-2 hover:ring-blue-500/50"
       onClick={onClick}
     >
       {/* Glare brightness layer */}
-      <motion.div
-        style={{
-          opacity: glareOpacity,
-          background: `radial-gradient(circle at ${50}% ${50}%, rgba(255,255,255,0.8), transparent 60%)`, // Simpler radial glare
-          left: glareX,
-          top: glareY,
-          translateX: '-50%',
-          translateY: '-50%',
-          position: 'absolute',
-          width: '200%',
-          height: '200%',
-          zIndex: 20,
-          pointerEvents: 'none',
-          mixBlendMode: 'overlay'
-        }}
-      />
+      {!shouldReduceMotion && (
+        <motion.div
+          style={{
+            opacity: glareOpacity,
+            background: `radial-gradient(circle at ${50}% ${50}%, rgba(255,255,255,0.8), transparent 60%)`, // Simpler radial glare
+            left: glareX,
+            top: glareY,
+            translateX: '-50%',
+            translateY: '-50%',
+            position: 'absolute',
+            width: '200%',
+            height: '200%',
+            zIndex: 20,
+            pointerEvents: 'none',
+            mixBlendMode: 'overlay'
+          }}
+        />
+      )}
 
       <div className="relative h-48 w-full overflow-hidden translate-z-20">
         <Image

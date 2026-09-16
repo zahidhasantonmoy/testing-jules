@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 // Basic in-memory rate limiting (IP -> { count, resetTime })
 const rateLimit = new Map<string, { count: number, resetTime: number }>();
@@ -41,10 +42,38 @@ export async function POST(req: Request) {
       );
     }
 
-    // In a real application, you would send this to a database like Supabase
-    // or send an email via Resend/Nodemailer here.
-    // For now, we simulate a successful backend process.
-    console.log(`Received contact from: ${user_name} (${user_email})`);
+    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+        console.warn('SMTP credentials not found in environment. Email simulated.');
+        return NextResponse.json(
+          { success: true, message: 'Message received successfully (simulated).' },
+          { status: 200 }
+        );
+    }
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail', // You can change this or make it configurable
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.SMTP_USER,
+      to: process.env.SMTP_USER, // Sending to yourself
+      replyTo: user_email,
+      subject: `New Contact Form Submission from ${user_name}`,
+      text: `Name: ${user_name}\nEmail: ${user_email}\nMessage: ${message}`,
+      html: `
+        <h3>New Contact Message</h3>
+        <p><strong>Name:</strong> ${user_name}</p>
+        <p><strong>Email:</strong> ${user_email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
       { success: true, message: 'Message received successfully.' },
