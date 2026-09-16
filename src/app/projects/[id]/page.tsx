@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from 'react-icons/fa';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface ProjectPageProps {
   params: {
@@ -107,8 +109,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
             About the Project
           </h2>
-          <div className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
-            {project.description}
+          <div className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {project.description}
+            </ReactMarkdown>
           </div>
         </article>
 
