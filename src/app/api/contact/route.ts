@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 // Basic in-memory rate limiting (IP -> { count, resetTime })
 const rateLimit = new Map<string, { count: number, resetTime: number }>();
@@ -41,10 +42,32 @@ export async function POST(req: Request) {
       );
     }
 
-    // In a real application, you would send this to a database like Supabase
-    // or send an email via Resend/Nodemailer here.
-    // For now, we simulate a successful backend process.
-    console.log(`Received contact from: ${user_name} (${user_email})`);
+    // Initialize Nodemailer transporter (uses SMTP variables if present)
+    // For local dev, we will log to console if no SMTP config is found.
+    if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: parseInt(process.env.SMTP_PORT || '587'),
+        secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+      });
+
+      await transporter.sendMail({
+        from: `"${user_name}" <${process.env.SMTP_USER}>`,
+        replyTo: user_email,
+        to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
+        subject: `New Contact Form Submission from ${user_name}`,
+        text: `Name: ${user_name}\nEmail: ${user_email}\n\nMessage:\n${message}`,
+        html: `<p><strong>Name:</strong> ${user_name}</p><p><strong>Email:</strong> ${user_email}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br>')}</p>`,
+      });
+      console.log(`Email sent successfully for: ${user_name} (${user_email})`);
+    } else {
+      console.log('No SMTP config found. Mocking email delivery.');
+      console.log(`Mock Email Data:\nName: ${user_name}\nEmail: ${user_email}\nMessage: ${message}`);
+    }
 
     return NextResponse.json(
       { success: true, message: 'Message received successfully.' },

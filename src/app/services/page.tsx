@@ -79,6 +79,28 @@ export default function ServicesPage() {
           ))}
         </div>
 
+
+        <section className="mb-16 bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100 dark:border-gray-700">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">Why Work With Me?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">1</div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Strategic Approach</h3>
+              <p className="text-gray-600 dark:text-gray-400">I align technical solutions with your business goals to ensure measurable success and ROI.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">2</div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Full-Stack Expertise</h3>
+              <p className="text-gray-600 dark:text-gray-400">From database architecture to responsive UI, I handle the entire product lifecycle.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">3</div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Data-Driven Insights</h3>
+              <p className="text-gray-600 dark:text-gray-400">Leveraging Python and ML to turn raw data into competitive advantages.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-blue-600 dark:bg-blue-900 rounded-3xl p-8 md:p-12 text-center text-white shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20"></div>
           <div className="relative z-10">

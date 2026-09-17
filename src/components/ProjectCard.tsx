@@ -11,7 +11,7 @@ interface ProjectCardProps {
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const ProjectCard = ({ title, description, images, technologies, liveUrl, githubUrl, onClick }: ProjectCardProps) => {
