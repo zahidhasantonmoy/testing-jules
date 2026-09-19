@@ -1,0 +1,21 @@
+{
+  "name": "Zahid Hasan Tonmoy's Portfolio",
+  "short_name": "Tonmoy",
+  "description": "Portfolio of Zahid Hasan Tonmoy — MERN Full Stack Developer, Data Analyst & AI Agent Developer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
