@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 
 interface ProjectCardProps {
@@ -73,16 +73,18 @@ const ProjectCard = ({ title, description, images, technologies, liveUrl, github
   const glareX = useTransform(xSpring, [-0.5, 0.5], ['0%', '100%']);
   const glareY = useTransform(ySpring, [-0.5, 0.5], ['0%', '100%']);
 
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onMouseEnter={handleMouseEnter}
+      onMouseMove={shouldReduceMotion ? undefined : handleMouseMove}
+      onMouseLeave={shouldReduceMotion ? undefined : handleMouseLeave}
+      onMouseEnter={shouldReduceMotion ? undefined : handleMouseEnter}
       style={{
-        rotateX,
-        rotateY,
-        scale,
+        rotateX: shouldReduceMotion ? 0 : rotateX,
+        rotateY: shouldReduceMotion ? 0 : rotateY,
+        scale: shouldReduceMotion ? 1 : scale,
         transformStyle: "preserve-3d",
       }}
       className="relative bg-white dark:bg-gray-800 rounded-xl rounded-tr-[30px] overflow-hidden shadow-xl cursor-pointer group perspective-1000 transform-gpu"
