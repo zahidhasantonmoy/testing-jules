@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Zahid Hasan Tonmoy | MERN Full Stack Developer, Data Analyst & AI Agent Developer",
   description: "Zahid Hasan Tonmoy — MERN Full Stack Developer & AI Agent Developer based in Dhaka, Bangladesh. Explore projects, skills, and experience.",
   keywords: "Zahid Hasan Tonmoy, MERN Full Stack Developer, Data Analyst, AI Agent Developer, Digital Marketer, MongoDB, Express.js, React, Node.js, Machine Learning, Deep Learning, AI, Next.js, TypeScript, Bangladesh, Dhaka, Portfolio, Projects, Skills",
+  manifest: "/manifest.json",
   openGraph: {
     title: "Zahid Hasan Tonmoy | MERN Full Stack Developer, Data Analyst & AI Agent Developer",
     description: "Zahid Hasan Tonmoy — MERN Full Stack Developer & AI Agent Developer based in Dhaka, Bangladesh. Explore projects, skills, and experience.",
