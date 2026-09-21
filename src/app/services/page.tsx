@@ -106,7 +106,7 @@ export default function ServicesPage() {
           <div className="relative z-10">
             <h2 className="text-3xl font-bold mb-4">Ready to start your next project?</h2>
             <p className="text-blue-100 mb-8 text-lg max-w-2xl mx-auto">
-              Whether you need a full-stack web application, deep data insights, or an intelligent AI solution, I'm here to help.
+              Whether you need a full-stack web application, deep data insights, or an intelligent AI solution, I&apos;m here to help.
             </p>
             <Link
               href="/#contact"
