@@ -107,8 +107,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
             About the Project
           </h2>
-          <div className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
-            {project.description}
+          <div className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+            {project.description.split('\n\n').map((paragraph, index) => {
+              if (paragraph.trim().startsWith('⚙️') || paragraph.trim().startsWith('👤') || paragraph.trim().startsWith('🔐') || paragraph.trim().startsWith('📲') || paragraph.trim().startsWith('💬') || paragraph.trim().startsWith('🛡️') || paragraph.trim().startsWith('💼') || paragraph.trim().startsWith('Functionalities:') || paragraph.trim().startsWith('Key Features:') || paragraph.trim().startsWith('Project Overview') || paragraph.trim().startsWith('Technical Components')) {
+                return <h3 key={index} className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-6 mb-2">{paragraph.trim()}</h3>;
+              } else if (paragraph.trim().startsWith('- ') || paragraph.trim().startsWith('    ')) {
+                 return <ul key={index} className="list-disc list-inside ml-4"><li className="mb-1">{paragraph.replace(/^- |^    /, '').trim()}</li></ul>;
+              }
+              return <p key={index}>{paragraph}</p>;
+            })}
           </div>
         </article>
 
