@@ -44,7 +44,7 @@ export default function CommandPalette() {
       id: 'projects',
       title: 'Projects',
       icon: <FaCode className="text-gray-400" />,
-      action: () => router.push('/#projects'),
+      action: () => router.push('/projects'),
     },
     {
       id: 'blog',
