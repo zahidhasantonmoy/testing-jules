@@ -1,29 +1,23 @@
-# Zahid Hasan Tonmoy
+# Zahid Hasan Tonmoy - Developer Portfolio
 
-Zahid Hasan Tonmoy is a MERN Full Stack Developer, Data Analyst, AI Agent Developer, and Digital Marketer based in Dhaka, Bangladesh. He builds end-to-end web applications using MongoDB, Express.js, React, and Node.js. He specialises in transforming complex data into actionable insights, building intelligent AI solutions, and crafting effective digital strategies.
+Zahid Hasan Tonmoy is a MERN Full Stack Developer, Data Analyst, AI Agent Developer, and Digital Marketer based in Dhaka, Bangladesh. He is currently pursuing a B.Sc in Computer Science & Engineering at Daffodil International University (2021–present).
 
-## Services & Skills
-- **Web Development**: React, Next.js, Node.js, Express, MongoDB, Supabase.
-- **Data Analysis**: Python, Pandas, Scikit-learn, TensorFlow.
-- **AI Agent Development**: Machine Learning, NLP, Predictive Modeling.
+## Core Technologies
+- **Web Development**: MERN stack (MongoDB, Express.js, React, Node.js), Next.js, TypeScript, REST APIs, JWT authentication, Tailwind CSS.
+- **Data & AI**: Python, Pandas, NumPy, TensorFlow, Keras, PyTorch, Scikit-learn, AI Agent Development.
+- **Mobile & Backend**: Flutter, Firebase, Supabase.
 
-## Key Projects
-- **Flexpath**: A mobile-first gig economy platform for Bangladesh using Flutter and Supabase.
-- **Gold Price Predictor**: A machine learning application predicting daily gold closing prices with R² ≈ 0.9999.
-- **Curious Cart BD**: A full-stack e-commerce platform built with Next.js, React, and TypeScript.
-- **Jerseyvault**: A full-featured e-commerce platform built with React.js and powered by Supabase.
-- **Vortex Shield**: A cybersecurity file encryption suite with AES-GCM and Argon2id.
-- **LocalDrop Pro**: A peer-to-peer file sharing and real-time chat web application via WebRTC.
-- **Smart Drainage System**: An IoT project combining hardware (ESP32-S3) and an Android app for real-time drainage monitoring.
+## Major Projects
+- **Flexpath**: A gig economy mobile app for Bangladesh built with Flutter and Supabase, connecting short-term workers and employers with NID verification.
+- **Gold Price Predictor**: An ML application using Python and Scikit-learn that predicts gold prices with an R² accuracy of ≈ 0.9999.
+- **Curious Cart BD**: A full-stack Next.js e-commerce platform.
+- **LocalDrop Pro**: A P2P WebRTC file sharing PWA with end-to-end AES-GCM encryption.
+- **Vortex Shield**: A cybersecurity file encryption suite using AES-GCM and Argon2id.
 
-## Contact
-Email: zahidhasantonmoy360@gmail.com
-Phone: +880 1724 348000
-Portfolio: https://zahidhasantonmoy.vercel.app
-
-## URLs
-- **Portfolio & Projects**: https://zahidhasantonmoy.vercel.app
-- **Services**: https://zahidhasantonmoy.vercel.app/services
-- **Blog**: https://zahidhasantonmoy.vercel.app/blog
+## Contact & Profiles
+- **Portfolio**: https://zahidhasantonmoy.vercel.app
 - **GitHub**: https://github.com/zahidhasantonmoy
 - **LinkedIn**: https://www.linkedin.com/in/zahidhasantonmoy/
+- **X (Twitter)**: https://x.com/zahidhasan_bd
+
+For freelance projects or full-time opportunities, please reach out via the contact form on his portfolio.

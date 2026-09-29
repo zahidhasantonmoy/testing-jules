@@ -5,6 +5,9 @@ import { FaCode, FaChartLine, FaRobot, FaArrowRight } from 'react-icons/fa';
 export const metadata: Metadata = {
   title: 'Services - Zahid Hasan Tonmoy',
   description: 'Hire Zahid Hasan Tonmoy for Web Development, Data Analysis, and AI Agent Development.',
+  alternates: {
+    canonical: 'https://zahidhasantonmoy.vercel.app/services',
+  },
 };
 
 const services = [

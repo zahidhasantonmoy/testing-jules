@@ -35,6 +35,9 @@ function getBlogPosts() {
 export const metadata = {
   title: 'Blog - Zahid Hasan Tonmoy',
   description: 'Writings on full stack development, data analysis, and AI.',
+  alternates: {
+    canonical: 'https://zahidhasantonmoy.vercel.app/blog',
+  },
 };
 
 export default function BlogList() {
