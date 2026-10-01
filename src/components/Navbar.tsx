@@ -2,18 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, LanguageIcon } from '@heroicons/react/24/outline';
 import ThemeSwitcher from './ThemeSwitcher';
 import MagneticButton from './MagneticButton';
+import { useLanguage } from '@/context/LanguageContext';
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/#about' },
-  { name: 'Projects', href: '/#projects' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Services', href: '/services' },
-  { name: 'Contact', href: '/#contact' },
-  { name: 'Resume', href: '/files/Resume/Zahid_Hasan_Resume.pdf' }
+  { name: 'home', href: '/' },
+  { name: 'about', href: '/#about' },
+  { name: 'projects', href: '/#projects' },
+  { name: 'blog', href: '/blog' },
+  { name: 'services', href: '/services' },
+  { name: 'contact', href: '/#contact' },
+  { name: 'resume', href: '/files/Resume/Zahid_Hasan_Resume.pdf' }
 ];
 
 import { useAudio } from '@/hooks/useAudio';
@@ -22,6 +23,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { playClick, playHover } = useAudio();
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,13 +65,13 @@ export default function Navbar() {
                 <MagneticButton key={item.name}>
                   <motion.a
                     href={item.href}
-                    target={item.name === 'Resume' ? '_blank' : undefined}
-                    rel={item.name === 'Resume' ? 'noopener noreferrer' : undefined}
+                    target={item.name === 'resume' ? '_blank' : undefined}
+                    rel={item.name === 'resume' ? 'noopener noreferrer' : undefined}
                     className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium inline-block"
                     onMouseEnter={() => playHover()}
                     onClick={() => playClick()}
                   >
-                    {item.name}
+                    {t(item.name)}
                   </motion.a>
                 </MagneticButton>
               ))}
@@ -77,6 +79,18 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => {
+                toggleLanguage();
+                playClick();
+              }}
+              onMouseEnter={() => playHover()}
+              className="flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label="Toggle language"
+            >
+              <LanguageIcon className="w-5 h-5" />
+              <span className="uppercase">{language}</span>
+            </button>
             <ThemeSwitcher />
 
             {/* Mobile menu button */}
@@ -109,12 +123,12 @@ export default function Navbar() {
             <motion.a
               key={item.name}
               href={item.href}
-              target={item.name === 'Resume' ? '_blank' : undefined}
-              rel={item.name === 'Resume' ? 'noopener noreferrer' : undefined}
+              target={item.name === 'resume' ? '_blank' : undefined}
+              rel={item.name === 'resume' ? 'noopener noreferrer' : undefined}
               whileHover={{ scale: 1.05 }}
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium"
             >
-              {item.name}
+              {t(item.name)}
             </motion.a>
           ))}
         </div>
