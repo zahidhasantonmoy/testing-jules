@@ -57,16 +57,16 @@ const About = ({ aboutMe }: AboutProps) => {
                   <span className="text-purple-400">const</span> <span className="text-blue-400">developer</span> <span className="text-white">=</span> <span className="text-yellow-400">{'{'}</span>
                 </div>
                 <div className="pl-4">
-                  <span className="text-blue-300">name</span>: <span className="text-[#ce9178]">"Zahid Hasan Tonmoy"</span>,
+                  <span className="text-blue-300">name</span>: <span className="text-[#ce9178]">&quot;Zahid Hasan Tonmoy&quot;</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-blue-300">role</span>: <span className="text-[#ce9178]">"Web Developer & AI Enthusiast"</span>,
+                  <span className="text-blue-300">role</span>: <span className="text-[#ce9178]">&quot;Web Developer &amp; AI Enthusiast&quot;</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-blue-300">location</span>: <span className="text-[#ce9178]">"Dhaka, Bangladesh"</span>,
+                  <span className="text-blue-300">location</span>: <span className="text-[#ce9178]">&quot;Dhaka, Bangladesh&quot;</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-blue-300">skills</span>: <span className="text-yellow-400">['React', 'Next.js', 'Python', 'AI Agents']</span>,
+                  <span className="text-blue-300">skills</span>: <span className="text-yellow-400">[&apos;React&apos;, &apos;Next.js&apos;, &apos;Python&apos;, &apos;AI Agents&apos;]</span>,
                 </div>
                 <div className="pl-4">
                   <span className="text-blue-300">bio</span>: <span className="text-yellow-400">`</span>
@@ -80,7 +80,7 @@ const About = ({ aboutMe }: AboutProps) => {
                   <span className="text-yellow-400">`</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-blue-300">contact</span>: <span className="text-[#ce9178]">"Via the paper plane below ✈️"</span>,
+                  <span className="text-blue-300">contact</span>: <span className="text-[#ce9178]">&quot;Via the paper plane below ✈️&quot;</span>,
                 </div>
                 <div>
                   <span className="text-yellow-400">{'}'}</span>;
