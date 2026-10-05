@@ -2,12 +2,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface AboutProps {
   aboutMe: string;
 }
 
 const About = ({ aboutMe }: AboutProps) => {
+  const { t } = useLanguage();
   // Split text into lines for "code" feel, or just wrap it
   const bioLines = aboutMe.split('\n').filter(line => line.length > 0);
 
@@ -23,7 +25,7 @@ const About = ({ aboutMe }: AboutProps) => {
         >
           <div className="flex items-center gap-4 mb-12 justify-center">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-white">
-              About Me
+              {t('about_me')}
               <span className="text-blue-500">.ts</span>
             </h2>
           </div>

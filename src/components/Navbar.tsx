@@ -5,15 +5,16 @@ import { motion } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import ThemeSwitcher from './ThemeSwitcher';
 import MagneticButton from './MagneticButton';
+import { useLanguage } from '@/context/LanguageContext';
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/#about' },
-  { name: 'Projects', href: '/#projects' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Services', href: '/services' },
-  { name: 'Contact', href: '/#contact' },
-  { name: 'Resume', href: '/files/Resume/Zahid_Hasan_Resume.pdf' }
+  { name: 'Home', dictKey: 'home', href: '/' },
+  { name: 'About', dictKey: 'about', href: '/#about' },
+  { name: 'Projects', dictKey: 'projects', href: '/#projects' },
+  { name: 'Blog', dictKey: 'blog', href: '/blog' },
+  { name: 'Services', dictKey: 'services', href: '/services' },
+  { name: 'Contact', dictKey: 'contact', href: '/#contact' },
+  { name: 'Resume', dictKey: 'Resume', href: '/files/Resume/Zahid_Hasan_Resume.pdf' }
 ];
 
 import { useAudio } from '@/hooks/useAudio';
@@ -22,6 +23,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { playClick, playHover } = useAudio();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +71,7 @@ export default function Navbar() {
                     onMouseEnter={() => playHover()}
                     onClick={() => playClick()}
                   >
-                    {item.name}
+                    {item.name === 'Resume' ? item.name : t(item.dictKey)}
                   </motion.a>
                 </MagneticButton>
               ))}
@@ -77,6 +79,13 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-1 rounded-md text-sm font-medium border border-gray-300 dark:border-gray-700"
+              aria-label="Toggle Language"
+            >
+              {language === 'en' ? 'BN' : 'EN'}
+            </button>
             <ThemeSwitcher />
 
             {/* Mobile menu button */}
@@ -114,7 +123,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium"
             >
-              {item.name}
+              {item.name === 'Resume' ? item.name : t(item.dictKey)}
             </motion.a>
           ))}
         </div>
