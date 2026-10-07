@@ -57,7 +57,7 @@ const ImageLightbox = ({ images, currentIndex, onClose, onNext, onPrev, title }:
           >
             <Image
               src={currentImage}
-              alt={title}
+              alt={title || "Image"}
               fill={true}
               objectFit="contain"
               className="rounded-lg shadow-lg"
