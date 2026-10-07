@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import CommandPalette from "@/components/CommandPalette";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -349,6 +350,7 @@ export default function RootLayout({
           {children}
         </Providers>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

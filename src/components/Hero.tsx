@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin, FaFacebook, FaTwitter, FaBrain, FaDatabase, FaCha
 import GradientText from './GradientText';
 import TypewriterText from './TypewriterText';
 import DecryptedText from './DecryptedText';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface HeroProps {
   name: string;
@@ -14,6 +15,7 @@ interface HeroProps {
 
 const Hero = ({ name, title }: HeroProps) => {
   const containerRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   // Parallax Mouse Stuff
   const mouseX = useMotionValue(0);
@@ -265,7 +267,7 @@ const Hero = ({ name, title }: HeroProps) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            View My Work
+            {t('hero.view_work')}
           </motion.a>
 
           <motion.a
@@ -276,7 +278,7 @@ const Hero = ({ name, title }: HeroProps) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>Download CV</span>
+            <span>{t('hero.download_cv')}</span>
           </motion.a>
 
           <motion.a
@@ -286,7 +288,7 @@ const Hero = ({ name, title }: HeroProps) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contact Me
+            {t('hero.contact_me')}
           </motion.a>
         </motion.div>
 

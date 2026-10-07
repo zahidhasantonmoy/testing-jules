@@ -17,11 +17,13 @@ const navigation = [
 ];
 
 import { useAudio } from '@/hooks/useAudio';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { playClick, playHover } = useAudio();
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +71,7 @@ export default function Navbar() {
                     onMouseEnter={() => playHover()}
                     onClick={() => playClick()}
                   >
-                    {item.name}
+                    {t(`nav.${item.name.toLowerCase()}`)}
                   </motion.a>
                 </MagneticButton>
               ))}
@@ -77,6 +79,13 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
+            <button
+              onClick={toggleLanguage}
+              className="px-2 py-1 text-sm font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle language"
+            >
+              {language === 'en' ? 'BN' : 'EN'}
+            </button>
             <ThemeSwitcher />
 
             {/* Mobile menu button */}
@@ -114,7 +123,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium"
             >
-              {item.name}
+              {t(`nav.${item.name.toLowerCase()}`)}
             </motion.a>
           ))}
         </div>
