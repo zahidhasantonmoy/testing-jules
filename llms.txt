@@ -1,0 +1,26 @@
+# Zahid Hasan Tonmoy
+
+Zahid Hasan Tonmoy is a MERN Full Stack Developer, Data Analyst, AI Agent Developer, and Digital Marketer based in Dhaka, Bangladesh. He is currently pursuing a B.Sc in Computer Science & Engineering at Daffodil International University.
+
+## Expertise & Technologies
+- **Web Development (MERN Stack):** MongoDB, Express.js, React, Node.js, Next.js, TypeScript, REST API, Tailwind CSS, Firebase, Supabase.
+- **Data Science & AI:** Python, Pandas, NumPy, TensorFlow, Keras, PyTorch, Scikit-learn, Machine Learning, AI Agent Development.
+- **Other Skills:** Flutter, Docker, SEO, Digital Marketing, Google Analytics.
+
+## Major Projects
+1. **Flexpath:** A gig economy mobile app for Bangladesh built with Flutter and Supabase.
+2. **Gold Price Predictor:** An ML regression web app predicting gold prices with high accuracy (R² ≈ 0.9999) using Python and Scikit-learn.
+3. **Curious Cart BD:** A full-stack e-commerce platform built with Next.js, React, and TypeScript.
+4. **Jerseyvault:** A full-featured e-commerce platform built with React.js and powered by Supabase PostgreSQL.
+5. **Vortex Shield:** A cybersecurity file encryption suite with AES-GCM and Argon2id. Includes a native Python desktop app and a React/Vite web application.
+6. **LocalDrop Pro:** A peer-to-peer (P2P) WebRTC file sharing PWA with end-to-end AES-GCM encryption.
+7. **Halarnati:** A PHP and MySQL web-based file and text sharing platform.
+8. **OffenseOrbit:** An advanced crime management platform using PHP and MySQL.
+9. **Smart Drainage System:** An IoT-based urban flooding prevention system using ESP32, sensors, Firebase, and an Android app.
+
+## Links
+- Portfolio: https://zahidhasantonmoy.vercel.app
+- GitHub: https://github.com/zahidhasantonmoy
+- LinkedIn: https://www.linkedin.com/in/zahidhasantonmoy/
+- X (Twitter): https://x.com/zahidhasan_bd
+- Facebook: https://www.facebook.com/zahidhasantonmoybd
