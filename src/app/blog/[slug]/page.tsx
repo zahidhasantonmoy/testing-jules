@@ -33,6 +33,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${data.title} - Zahid Hasan Tonmoy`,
     description: data.description,
+    openGraph: {
+      title: `${data.title} - Zahid Hasan Tonmoy`,
+      description: data.description,
+      type: 'article',
+      publishedTime: data.date,
+    },
   };
 }
 
