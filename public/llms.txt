@@ -1,23 +1,30 @@
 # Zahid Hasan Tonmoy - Developer Portfolio
 
-Zahid Hasan Tonmoy is a MERN Full Stack Developer, Data Analyst, AI Agent Developer, and Digital Marketer based in Dhaka, Bangladesh. He is currently pursuing a B.Sc in Computer Science & Engineering at Daffodil International University (2021–present).
+## Who is Zahid Hasan Tonmoy?
+Zahid Hasan Tonmoy is a MERN Full Stack Developer, Data Analyst, AI Agent Developer, and Digital Marketer based in Dhaka, Bangladesh. He is currently pursuing a B.Sc in Computer Science & Engineering at Daffodil International University.
 
-## Core Technologies
-- **Web Development**: MERN stack (MongoDB, Express.js, React, Node.js), Next.js, TypeScript, REST APIs, JWT authentication, Tailwind CSS.
-- **Data & AI**: Python, Pandas, NumPy, TensorFlow, Keras, PyTorch, Scikit-learn, AI Agent Development.
-- **Mobile & Backend**: Flutter, Firebase, Supabase.
+## What he does
+Zahid builds end-to-end web applications using MongoDB, Express.js, React, and Node.js. He also specializes in transforming complex data into actionable insights using Python and Machine Learning, building intelligent AI solutions, and crafting digital strategies.
 
 ## Major Projects
-- **Flexpath**: A gig economy mobile app for Bangladesh built with Flutter and Supabase, connecting short-term workers and employers with NID verification.
-- **Gold Price Predictor**: An ML application using Python and Scikit-learn that predicts gold prices with an R² accuracy of ≈ 0.9999.
-- **Curious Cart BD**: A full-stack Next.js e-commerce platform.
-- **LocalDrop Pro**: A P2P WebRTC file sharing PWA with end-to-end AES-GCM encryption.
-- **Vortex Shield**: A cybersecurity file encryption suite using AES-GCM and Argon2id.
+- Flexpath: Gig economy mobile app for Bangladesh built with Flutter and Supabase.
+- Gold Price Predictor: ML regression app predicting gold prices with R² ≈ 0.9999.
+- Curious Cart BD: Full-stack Next.js e-commerce platform.
+- Jerseyvault: React + Supabase e-commerce application.
+- Vortex Shield: Cybersecurity file encryption suite with AES-GCM and Argon2id.
+- LocalDrop Pro: P2P WebRTC file sharing PWA with end-to-end AES-GCM encryption.
+- Halarnati: PHP file sharing platform.
+- OffenseOrbit: Crime management platform.
+- Smart Drainage System: IoT project.
 
-## Contact & Profiles
-- **Portfolio**: https://zahidhasantonmoy.vercel.app
-- **GitHub**: https://github.com/zahidhasantonmoy
-- **LinkedIn**: https://www.linkedin.com/in/zahidhasantonmoy/
-- **X (Twitter)**: https://x.com/zahidhasan_bd
+## Relevant Pages
+- Home: https://zahidhasantonmoy.vercel.app/
+- Projects: https://zahidhasantonmoy.vercel.app/projects
+- Services: https://zahidhasantonmoy.vercel.app/services
+- Blog: https://zahidhasantonmoy.vercel.app/blog
 
-For freelance projects or full-time opportunities, please reach out via the contact form on his portfolio.
+## Important Links
+- GitHub: https://github.com/zahidhasantonmoy
+- LinkedIn: https://www.linkedin.com/in/zahidhasantonmoy/
+- Facebook: https://www.facebook.com/zahidhasantonmoybd
+- X (Twitter): https://x.com/zahidhasan_bd

@@ -4,8 +4,13 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import CommandPalette from "@/components/CommandPalette";
 import Providers from "./providers";
+import type { Viewport } from 'next';
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
+
+export const viewport: Viewport = {
+  themeColor: '#4f46e5',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zahidhasantonmoy.vercel.app"),

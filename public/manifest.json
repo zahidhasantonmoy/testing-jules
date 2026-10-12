@@ -1,16 +1,17 @@
 {
   "name": "Zahid Hasan Tonmoy's Portfolio",
-  "short_name": "Tonmoy",
-  "description": "Portfolio of Zahid Hasan Tonmoy — MERN Full Stack Developer, Data Analyst & AI Agent Developer.",
+  "short_name": "Portfolio",
+  "description": "Portfolio of Zahid Hasan Tonmoy - MERN Full Stack Developer, Data Analyst, AI Agent Developer & Digital Marketer based in Dhaka, Bangladesh.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "theme_color": "#4f46e5",
   "icons": [
     {
       "src": "/icon.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/icon.png",
