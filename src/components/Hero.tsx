@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useMotionValue, useReducedMotion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaFacebook, FaTwitter, FaBrain, FaDatabase, FaChartLine } from 'react-icons/fa';
 import GradientText from './GradientText';
 import TypewriterText from './TypewriterText';
@@ -14,6 +14,7 @@ interface HeroProps {
 
 const Hero = ({ name, title }: HeroProps) => {
   const containerRef = useRef<HTMLElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   // Parallax Mouse Stuff
   const mouseX = useMotionValue(0);
@@ -44,13 +45,13 @@ const Hero = ({ name, title }: HeroProps) => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: shouldReduceMotion ? 0 : 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: shouldReduceMotion ? 0 : 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
