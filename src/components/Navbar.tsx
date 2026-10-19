@@ -17,11 +17,13 @@ const navigation = [
 ];
 
 import { useAudio } from '@/hooks/useAudio';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { playClick, playHover } = useAudio();
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +71,7 @@ export default function Navbar() {
                     onMouseEnter={() => playHover()}
                     onClick={() => playClick()}
                   >
-                    {item.name}
+                    {t(item.name)}
                   </motion.a>
                 </MagneticButton>
               ))}
@@ -77,6 +79,16 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => {
+                playClick();
+                toggleLanguage();
+              }}
+              onMouseEnter={() => playHover()}
+              className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-1 rounded-md border border-gray-200 dark:border-gray-700 transition-colors"
+            >
+              {language === 'en' ? 'BN' : 'EN'}
+            </button>
             <ThemeSwitcher />
 
             {/* Mobile menu button */}
@@ -104,19 +116,32 @@ export default function Navbar() {
         animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 shadow-xl border-b border-gray-200 dark:border-gray-800">
           {navigation.map((item) => (
             <motion.a
               key={item.name}
               href={item.href}
               target={item.name === 'Resume' ? '_blank' : undefined}
               rel={item.name === 'Resume' ? 'noopener noreferrer' : undefined}
-              whileHover={{ scale: 1.05 }}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium"
+              whileHover={{ scale: 1.02 }}
+              onClick={() => setIsOpen(false)}
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-3 rounded-md text-base font-medium border-b border-gray-100 dark:border-gray-800 last:border-0"
             >
-              {item.name}
+              {t(item.name)}
             </motion.a>
           ))}
+          <div className="px-3 py-3 flex items-center justify-between">
+            <span className="text-gray-700 dark:text-gray-300 text-base font-medium">Language</span>
+            <button
+              onClick={() => {
+                playClick();
+                toggleLanguage();
+              }}
+              className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-1 rounded-md border border-gray-200 dark:border-gray-700 transition-colors bg-gray-50 dark:bg-gray-800"
+            >
+              {language === 'en' ? 'বাংলা' : 'English'}
+            </button>
+          </div>
         </div>
       </motion.div>
     </motion.nav>
