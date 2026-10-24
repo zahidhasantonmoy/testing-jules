@@ -5,20 +5,24 @@ import { motion } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import ThemeSwitcher from './ThemeSwitcher';
 import MagneticButton from './MagneticButton';
+import { useLanguage } from '@/context/LanguageContext';
 
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/#about' },
-  { name: 'Projects', href: '/#projects' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Services', href: '/services' },
-  { name: 'Contact', href: '/#contact' },
-  { name: 'Resume', href: '/files/Resume/Zahid_Hasan_Resume.pdf' }
+
+const navigationKeys = [
+  { key: 'nav.home', href: '/' },
+  { key: 'nav.about', href: '/#about' },
+  { key: 'nav.projects', href: '/#projects' },
+  { key: 'nav.blog', href: '/blog' },
+  { key: 'nav.services', href: '/services' },
+  { key: 'nav.contact', href: '/#contact' },
+  { name: 'Resume', href: '/files/Resume/Zahid_Hasan_Resume.pdf', external: true }
 ];
+
 
 import { useAudio } from '@/hooks/useAudio';
 
 export default function Navbar() {
+  const { t, language, toggleLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { playClick, playHover } = useAudio();
@@ -59,8 +63,8 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navigation.map((item) => (
-                <MagneticButton key={item.name}>
+              {navigationKeys.map((item) => (
+                <MagneticButton key={item.key ? t(item.key) : item.name}>
                   <motion.a
                     href={item.href}
                     target={item.name === 'Resume' ? '_blank' : undefined}
@@ -69,7 +73,7 @@ export default function Navbar() {
                     onMouseEnter={() => playHover()}
                     onClick={() => playClick()}
                   >
-                    {item.name}
+                    {item.key ? t(item.key) : item.name}
                   </motion.a>
                 </MagneticButton>
               ))}
@@ -77,7 +81,16 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
+
+            <button
+              onClick={toggleLanguage}
+              className="p-2 mr-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium text-sm border border-gray-200 dark:border-gray-700"
+              aria-label="Toggle language"
+            >
+              {language === 'en' ? 'BN' : 'EN'}
+            </button>
             <ThemeSwitcher />
+
 
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -105,16 +118,16 @@ export default function Navbar() {
         transition={{ duration: 0.3 }}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900">
-          {navigation.map((item) => (
+          {navigationKeys.map((item) => (
             <motion.a
-              key={item.name}
+              key={item.key ? t(item.key) : item.name}
               href={item.href}
               target={item.name === 'Resume' ? '_blank' : undefined}
               rel={item.name === 'Resume' ? 'noopener noreferrer' : undefined}
               whileHover={{ scale: 1.05 }}
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium"
             >
-              {item.name}
+              {item.key ? t(item.key) : item.name}
             </motion.a>
           ))}
         </div>

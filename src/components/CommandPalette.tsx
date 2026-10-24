@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaSearch, FaCode, FaBook, FaBriefcase, FaEnvelope, FaHome } from 'react-icons/fa';
+import data from '@/data/data.json';
 
 interface Command {
   id: string;
@@ -66,9 +67,18 @@ export default function CommandPalette() {
     },
   ];
 
-  const filteredCommands = query === ''
-    ? commands
-    : commands.filter((command) => command.title.toLowerCase().includes(query.toLowerCase()));
+  // Generate commands for individual projects
+  const projectCommands: Command[] = data.projects.map((project) => ({
+    id: `project-${project.id}`,
+    title: `Project: ${project.title}`,
+    icon: <FaCode className="text-gray-400" />,
+    action: () => router.push(`/projects/${project.id}`),
+  }));
+
+  const allCommands = [...commands, ...projectCommands];
+
+
+  const filteredCommands = query === '' ? allCommands : allCommands.filter((command) => command.title.toLowerCase().includes(query.toLowerCase()));
 
   const handleSelect = (action: () => void) => {
     action();
