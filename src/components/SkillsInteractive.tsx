@@ -90,6 +90,7 @@ const SkillsInteractive = ({ skills }: SkillsInteractiveProps) => {
                 tagContainer.removeEventListener('click', clickHandler);
             }
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [skills]);
 
 
