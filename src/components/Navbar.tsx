@@ -17,11 +17,13 @@ const navigation = [
 ];
 
 import { useAudio } from '@/hooks/useAudio';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { playClick, playHover } = useAudio();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +62,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navigation.map((item) => (
-                <MagneticButton key={item.name}>
+                <MagneticButton key={t(`nav.${item.name.toLowerCase()}`)}>
                   <motion.a
                     href={item.href}
                     target={item.name === 'Resume' ? '_blank' : undefined}
@@ -69,7 +71,7 @@ export default function Navbar() {
                     onMouseEnter={() => playHover()}
                     onClick={() => playClick()}
                   >
-                    {item.name}
+                    {t(`nav.${item.name.toLowerCase()}`)}
                   </motion.a>
                 </MagneticButton>
               ))}
@@ -77,6 +79,14 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
+
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors font-medium text-sm"
+              aria-label="Toggle Language"
+            >
+              {language === 'en' ? 'BN' : 'EN'}
+            </button>
             <ThemeSwitcher />
 
             {/* Mobile menu button */}
@@ -107,14 +117,14 @@ export default function Navbar() {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900">
           {navigation.map((item) => (
             <motion.a
-              key={item.name}
+              key={t(`nav.${item.name.toLowerCase()}`)}
               href={item.href}
               target={item.name === 'Resume' ? '_blank' : undefined}
               rel={item.name === 'Resume' ? 'noopener noreferrer' : undefined}
               whileHover={{ scale: 1.05 }}
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium"
             >
-              {item.name}
+              {t(`nav.${item.name.toLowerCase()}`)}
             </motion.a>
           ))}
         </div>
