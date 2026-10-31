@@ -184,7 +184,7 @@ const Contact = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Message Sent!</h3>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Thanks for reaching out. I'll get back to you as soon as possible.
+                    Thanks for reaching out. I&apos;ll get back to you as soon as possible.
                   </p>
                   <button
                     onClick={() => setIsSuccess(false)}
