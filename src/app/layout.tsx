@@ -353,3 +353,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const viewport = { themeColor: '#ffffff' };

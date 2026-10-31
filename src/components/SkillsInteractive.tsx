@@ -90,7 +90,7 @@ const SkillsInteractive = ({ skills }: SkillsInteractiveProps) => {
                 tagContainer.removeEventListener('click', clickHandler);
             }
         };
-    }, [skills]);
+    }, [skills, setSelectedSkill]);
 
 
     // Determine active color for sphere text based on hover
